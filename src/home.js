@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-function Home(){
+function Home(props){
+    console.log(props.windowwidth);
+    console.log(props.windowheight);
     return(
-        <div className='Home' style={{width:"100%",height:"100%"}}>
+        <div className='Home' style={{width:props.windowwidth,height:props.windowheight}}>
             <div style={{width:"100%",height:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}>
-                <div style={{position:"absolute",width:"500px",height:"500px"}}>
-                    <p style={{color:"#424874",fontFamily:"LeagueSpartan", fontWeight:"bold",fontSize:"70px"}}>Hey, I'm Justin.</p>
-                    <p style={{color:"#424874"}}>I'm an undergraduate student from San Jose State University, and an aspiring Software Engineer.</p>
+                <div style={{position:"absolute",width:(props.windowwidth/2),height:"200px",minHeight:'250px'}}>
+                    <p style={{color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"70px",margin:0}}>Hey, I'm Justin.</p>
+                    <p style={{color:"#00A8CC"}}>I'm an undergraduate student from San Jose State University, and an aspiring Software Engineer.</p>
                 </div>
             </div>
         </div>

@@ -40,3 +40,7 @@
   font-family: 'LeagueSpartan';
   src: local('LeagueSpartan'), url(./fonts/LeagueSpartan-Bold.otf) format('otf');
 }
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: local('PlayfairDisplay'), url(./fonts/PlayfairDisplay.ttf) format('ttf');
+}

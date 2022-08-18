@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react'
-
+let animationFrame;
+let circlePositions = [];
+let prevWindowWidth,prevWindowHeight,transformWidth,transformHeight;
 const Canvas = props => {
   const canvasRef = useRef(null);
   let circles = [];
   let draw = (ctx)=>{
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-    ctx.fillRect(0,0,ctx.canvas.width,ctx.canvas.height);
+    ctx.fillStyle = 'rgb(20, 40, 80)';
+    ctx.fillRect(0,0,props.windowwidth,props.windowheight);
     for(let i=0;i<circles.length;i++){
         circles[i].update();
         circles[i].collide();
@@ -13,29 +15,35 @@ const Canvas = props => {
   }
   //useEffect runs with component is actually mounted so canvas doesnt return null
   useEffect(()=>{
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    let canvas = canvasRef.current;
+    let ctx = canvas.getContext('2d');
+    canvas.width = props.windowwidth;
+    canvas.height = props.windowheight;
+    transformWidth = canvas.width/prevWindowWidth;
+    transformHeight = canvas.height/prevWindowHeight;
+    prevWindowHeight = props.windowheight;
+    prevWindowWidth = props.windowwidth;
+    window.cancelAnimationFrame(animationFrame);
     const render = () =>{
-        draw(ctx);
-        window.requestAnimationFrame(render);
+      draw(ctx);
+      animationFrame = window.requestAnimationFrame(render);
     }
     render()
     class Circle{
-        constructor(){
-          this.x = Math.floor(Math.random() * canvas.width);
-          this.y = Math.floor(Math.random() * canvas.height);
-          this.xVelocity = Math.floor(Math.random()* (100-(-100))) + (-100);
-          this.yVelocity = Math.floor(Math.random()* (100-(-100))) + (-100);
+        constructor(x,y,vx,vy,num){
+          this.x = x;
+          this.y = y;
+          this.xVelocity = vx;
+          this.yVelocity = vy;
           this.quadrant = 0;
+          this.id = num;
         }
         update(){
-          this.x += this.xVelocity/3000;
-          this.y += this.yVelocity/3000;
+          this.x += this.xVelocity/1500;
+          this.y += this.yVelocity/1500;
           ctx.beginPath();
           ctx.arc(this.x, this.y, 5, 0, Math.PI * 2);
-          ctx.fillStyle = "#DCD6F7";
+          ctx.fillStyle = "#27496D";
           ctx.fill();
           if(this.x > canvas.width || this.x < 0 ){
             this.xVelocity*=-1;
@@ -43,17 +51,6 @@ const Canvas = props => {
           else if(this.y > canvas.height || this.y < 0){
             this.yVelocity*=-1;
           }
-        //   if(this.x > canvas.width){
-        //     this.x = 0;
-        //   }else if(this.x < 0 ){
-        //     this.x=canvas.width;
-        //   }
-        //   else if(this.y > canvas.height){
-        //     this.y = 0;
-        //   }
-        //   else if(this.y < 0){
-        //     this.y=canvas.height;
-        //   }
           if(this.x < canvas.width/2 && this.y > canvas.height/2){
             this.quadrant = 1;
           }else if(this.x > canvas.width/2 && this.y > canvas.height/2){
@@ -63,6 +60,7 @@ const Canvas = props => {
           }else if(this.x > canvas.width/2 && this.y < canvas.height/2){
               this.quadrant = 4;
           }
+          circlePositions[this.id] = {x:this.x,y:this.y,vx: this.xVelocity, vy:this.yVelocity}
         }
         collide(){
           for(let i=0; i<circles.length;i++){
@@ -71,17 +69,24 @@ const Canvas = props => {
                 ctx.beginPath();
                 ctx.moveTo(this.x, this.y); 
                 ctx.lineTo(circles[i].x, circles[i].y);
-                ctx.strokeStyle = "#DCD6F7";   
+                ctx.strokeStyle = "#27496D";   
                 ctx.stroke(); 
               }
             }
           }
         }
       }
-    for(let i=0; i<50;i++){
-        circles.push(new Circle());
+    if(circlePositions.length === 0){
+      for(let i=0; i<50;i++){
+        circles.push(new Circle(Math.floor(Math.random() * canvas.width),Math.floor(Math.random() * canvas.height),Math.floor(Math.random()* (100-(-100))) + (-100),Math.floor(Math.random()* (100-(-100))) + (-100),i));
+      }
+    }else{
+      for(let i=0; i<50;i++){
+        circles.push(new Circle(circlePositions[i].x * transformWidth,circlePositions[i].y * transformHeight,circlePositions[i].vx,circlePositions[i].vy,i));
+      }
     }
-  },[])
+    console.log(circles.length)
+  },[props.windowwidth,props.windowheight])
   
   return <canvas ref={canvasRef} {...props}/>
 }
