@@ -45,8 +45,8 @@ function App() {
 
         <Home windowwidth={width} windowheight={height} />
         <Projects windowwidth={width} windowheight={height} />
-        <p>width is {width}</p>
-        <p>height is {height}</p>
+        {/* <p>width is {width}</p>
+        <p>height is {height}</p> */}
       </ThemeProvider>
     </div>
   );
