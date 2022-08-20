@@ -21,7 +21,7 @@ function App() {
       return () => window.removeEventListener("resize", updateDimensions);
   }, []);
   return (
-    <div className="App" style={{width:"100%",height: "400%"}}>
+    <div className="App" style={{width:"100%",height: "400%",overflowX: "hidden"}}>
       <CirclesCanvas windowwidth={width} windowheight = {height} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <RotatingShapes windowwidth={width} windowheight = {height} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <ThemeProvider theme={theme}>
