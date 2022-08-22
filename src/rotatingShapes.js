@@ -18,7 +18,6 @@ function dragging() {
         if(mouseDown) {
           shapesPosition[i].x = mouseX;
           shapesPosition[i].y = mouseY;
-          console.log('running')
         }
       },1)
     }

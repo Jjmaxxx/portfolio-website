@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 function Home(props){
-    console.log(props.windowwidth);
-    console.log(props.windowheight);
     return(
         <div className='Home' style={{width:props.windowwidth,height:props.windowheight}}>
             <div style={{width:"100%",height:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}>

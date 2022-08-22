@@ -85,7 +85,6 @@ const Canvas = props => {
         circles.push(new Circle(circlePositions[i].x * transformWidth,circlePositions[i].y * transformHeight,circlePositions[i].vx,circlePositions[i].vy,i));
       }
     }
-    console.log(circles.length)
   },[props.windowwidth,props.windowheight])
   
   return <canvas ref={canvasRef} {...props}/>
