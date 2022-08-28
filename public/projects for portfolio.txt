@@ -1,0 +1,24 @@
+languages: experienced in node.js, js, python, unity/c#, java
+experience: been coding for 5 years, been teaching kids how to code at thecoderschool for 1 year
+primarily teach kids scratch and python
+
+projects:
+collage maker, made in pure html, css, js
+allows for uploading of images, moving, resizing, and downloading of final product
+
+definitelynotcookieclicker made in p5js 
+a cookie clicker game that takes advantage of classes to duplicate elements
+
+audio recorder website made with p5js, express 
+allows the user to record audio from their mic, play it back to them to determine if it's good or not, and then download
+
+let's dueldo! made with socket.io, p5js 
+game pits 2 random players from all clients connected to the server against each other to see who can draw the best picture. winner is determined by audience votes
+
+discord insulter bot made with mongodb and npm discord api 
+users can set the bot to automatically insult any other user or bot that types in the chat. allows for adding of insults and different sets of insult depending on server the bot is in
+
+youtuber downloader + player app full stack application. uses electron and react
+allows for downloading of videos from youtube in either mp3 or mp4 format onto the users device and has a built in player. once downloaded users can play the video
+in the application by navigating to the playlists tab. app allows new playlists to be made, movement between playlists, renaming, and deletion of files.
+

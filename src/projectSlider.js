@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
 import { useState, useEffect, useRef} from 'react';
-import ProjectDialog from './dialogs/projectsDialog.js';
+import ProjectDialog from './projectsDialog.js';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Dialog, DialogTitle } from "@mui/material";
-
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Dialog, DialogTitle } from "@mui/material";
 let imagesList = [];
 function ProjectSlider(props){
     const [images, setImages] = useState([]);
