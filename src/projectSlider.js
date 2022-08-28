@@ -10,7 +10,6 @@ let imagesList = [];
 function ProjectSlider(props){
     const [images, setImages] = useState([]);
     const [index,setIndex] = useState(0);
-    const [movement,setMovement] = useState(0);
     const [translating,setTranslating] = useState('');
     const [dialog, setDialogNum] = useState('false');
     const imageContainer = useRef(null);
@@ -19,16 +18,7 @@ function ProjectSlider(props){
             imagesList = props.images;
             setImages(props.images);
         }
-        translate();
-    }, [movement]);
-    function translate(){
-        if(movement !== 0){
-            imageContainer.current.style.transitionDuration = '1s';
-        }else{
-            imageContainer.current.style.transitionDuration = '0s';
-        }
-        imageContainer.current.style.transform = `translateX(${movement*-1}px)`;
-    }
+    }, []);
     function goBack(){
         if(translating !== "true"){
             setTranslating('true');
@@ -37,14 +27,16 @@ function ProjectSlider(props){
             }else{
                 setIndex(index-1);
             }
-            setMovement(-710);
+            imageContainer.current.style.transitionDuration = '0.8s';
+            imageContainer.current.style.transform = `translateX(${-710*-1}px)`;
             setTimeout((()=>{
                 imagesList.splice(0,0,imagesList[imagesList.length-1]);
                 imagesList.splice(imagesList.length-1);
                 setImages(imagesList);
-                setMovement(0);
+                imageContainer.current.style.transitionDuration = '0s';
+                imageContainer.current.style.transform = `translateX(0px)`;
                 setTranslating('false');
-            }), 1000)
+            }), 790)
         }
     }
     function goForward(){
@@ -55,14 +47,16 @@ function ProjectSlider(props){
             }else{
                 setIndex(index+1);
             }
-            setMovement(710);
+            imageContainer.current.style.transitionDuration = '0.8s';
+            imageContainer.current.style.transform = `translateX(${710*-1}px)`;
             setTimeout((()=>{
                 imagesList.push(imagesList[0]);
                 imagesList.splice(0,1);
                 setImages(imagesList);
-                setMovement(0);
+                imageContainer.current.style.transitionDuration = '0s';
+                imageContainer.current.style.transform = `translateX(0px)`;
                 setTranslating('false');
-            }), 1000)
+            }), 790)
         }
     }
     function openDialog(num){
@@ -71,12 +65,12 @@ function ProjectSlider(props){
     return(
         <div style={{width:props.width,height:props.height,display:"flex"}}>
             <div 
-                style={{width:"100%",height:"100%", whiteSpace:"nowrap",display:'flex',justifyContent:"center"}}
+                style={{width:"100%",height:"100%", whiteSpace:"nowrap",display:'flex',justifyContent:"center",transform:`translateX(0px)`}}
                 ref={imageContainer}
             >
             {images.map((src,num)=>{
                 if(num===Math.floor(images.length/2)){
-                   return(<img onClick={()=>{openDialog(num)}} src={require(`${ src}`)} width={"800px"} height={"100%"} alt={src}></img>) 
+                   return(<img style={{cursor:"pointer"}} onClick={()=>{openDialog(num)}} src={require(`${ src}`)} width={"800px"} height={"100%"} alt={src}></img>) 
                 }else{
                     return(<img style={{opacity: "0.4"}} src={require(`${ src}`)} width={"800px"} height={"100%"} alt={src}/>)
                 }
@@ -100,4 +94,4 @@ function ProjectSlider(props){
         </div>
     )
 }
-export default ProjectSlider;     
+export default ProjectSlider;

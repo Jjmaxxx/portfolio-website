@@ -15,7 +15,7 @@ allows the user to record audio from their mic, play it back to them to determin
 let's dueldo! made with socket.io, p5js 
 game pits 2 random players from all clients connected to the server against each other to see who can draw the best picture. winner is determined by audience votes
 
-discord insulter bot made with mongodb and npm discord api 
+discord insulter bot made with mongoDB and discord api 
 users can set the bot to automatically insult any other user or bot that types in the chat. allows for adding of insults and different sets of insult depending on server the bot is in
 
 youtuber downloader + player app full stack application. uses electron and react

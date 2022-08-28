@@ -34,17 +34,23 @@ function ProjectDialog(props){
         case 2:
           setProjectImages(["./images/project3.png","./images/project3 2.png","./images/project3 3.png","./images/project3 4.png"]);
           setProjectName("Let's Dueldo!");
-          setProjectText("This game pits 2 players from all clients connected to the server against each other to see who can draw the best picture from the prompt. Winner is determined by the other clients connected that are not playing.");
+          setProjectText("This game pits 2 players from all clients connected to the server against each other to see who can draw the best picture from the prompt. The winner is determined by the other clients connected that are not playing.");
           setMadeWithText("Node.js. Uses Socket.IO, and p5.js");
           setProjectLink("https://github.com/Jjmaxxx/Lets-Dueldo");
           break;
         case 3:
+          setProjectImages(["./images/project5.png","./images/project5 2.png","./images/project5 3.png","./images/project5 4.png"]);
           setProjectName("Bitcoin Clicker");
+          setProjectText("This game is cookie clicker but instead of going on infinitely, you need to get out of $1,000,000 debt! Buy a plethora of items and people to support you on your journey of Bitcoin domination and win!");
           setMadeWithText("HTML, CSS, JS. Uses p5.js");
+          setProjectLink("https://github.com/Jjmaxxx/bitcoin-clicker");
           break;
         case 4:
+          setProjectImages(["./images/project4.png","./images/project4 2.png","./images/project4 3.png","./images/project4 4.png","./images/project4 5.png"]);
           setProjectName("Audio Recorder Website");
+          setProjectText("This website allows the user to record audio from their microphone and download the file. Has a built in player that plays the audio back to the user so they can determine if it's good or not.");
           setMadeWithText("Node.js. Uses p5.js");
+          setProjectLink("https://github.com/Jjmaxxx/audio-recording");
           break;
         default:
           setProjectName("null");
