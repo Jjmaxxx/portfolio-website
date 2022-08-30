@@ -5,7 +5,6 @@ import { Dialog, DialogTitle } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Divider from '@mui/material/Divider';
 function ProjectDialog(props){
     const [open, setOpen] = useState(true);
     const [projectName,setProjectName] = useState("");

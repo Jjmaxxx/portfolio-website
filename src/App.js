@@ -3,6 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Home from './home.js';
 import Projects from './projects.js';
+import About from './about.js';
 import theme from './utils/theme.js';
 import CirclesCanvas from './circlesGraphic.js';
 import RotatingShapes from './rotatingShapes.js';
@@ -44,7 +45,8 @@ function App() {
         </AppBar>
 
         <Home windowwidth={width} windowheight={height} />
-        <Projects windowwidth={width} windowheight={height} />
+        <Projects windowwidth={width}/>
+        <About windowwidth={width} windowheight={height}/>
         {/* <p>width is {width}</p>
         <p>height is {height}</p> */}
       </ThemeProvider>
