@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Home from './home.js';
 import Projects from './projects.js';
 import About from './about.js';
+import Contact from './contact.js';
 import theme from './utils/theme.js';
 import CirclesCanvas from './circlesGraphic.js';
 import RotatingShapes from './rotatingShapes.js';
@@ -22,7 +23,7 @@ function App() {
       return () => window.removeEventListener("resize", updateDimensions);
   }, []);
   return (
-    <div className="App" style={{width:"100%",height: "400%",overflowX: "hidden"}}>
+    <div className="App" style={{width:"100%",height: {height},overflow: "hidden"}}>
       <CirclesCanvas windowwidth={width} windowheight = {height} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <RotatingShapes windowwidth={width} windowheight = {height} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <ThemeProvider theme={theme}>
@@ -45,8 +46,9 @@ function App() {
         </AppBar>
 
         <Home windowwidth={width} windowheight={height} />
-        <Projects windowwidth={width}/>
+        <Projects windowwidth={width} windowheight={height}/>
         <About windowwidth={width} windowheight={height}/>
+        <Contact windowwidth={width} windowheight={height/4}/>
         {/* <p>width is {width}</p>
         <p>height is {height}</p> */}
       </ThemeProvider>

@@ -42,7 +42,7 @@ function About(props){
                     <SpinningCircles style={{width:"100%",height:"100%"}}/>
                 </div> */}
                 {/* style={{width:"100%"}} */}
-                <div >
+                <div>
                     <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"40px"}}>Work Experience</p>
                     <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
                         <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"300px"}} variant="middle"></Divider>
