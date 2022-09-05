@@ -1,63 +1,32 @@
 import React from 'react';
 import './App.css';
+import Contact from './contact.js';
 import Divider from '@mui/material/Divider';
 import SpinningCircles from './spinningCircles.js';
 // let imageList = ["./images/testimage1.png","./images/testimage2.png","./images/testimage3.png","./images/testimage4.png","./images/testimage5.png"];
 function About(props){
     return(
-        <div className='Home' style={{width:props.windowwidth,height:props.windowheight}}>
-            <div style={{display:"flex",justifyContent:"space-around"}}>
-            {/* style={{width:"100%"}} */}
-                <div>
-                    <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"40px"}}>Languages</p>
-                    <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
-                        <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"200px"}} variant="middle"></Divider>
-                    </div>
-                    <div style={{marginLeft:"50px"}}>
-                        <ul style={{display:"flex",flexDirection:"column",gap:"0px 30px",textAlign:"left",listStylePosition: 'inside',color:"#00A8CC",width:"100%",padding:"0",margin:"0"}}>
-                            <li style={{fontWeight:"bold"}}>HTML/CSS/JS</li>
-                            <ul>
-                                <li>Used for about 4 years. Very Proficient</li>
-                                <li>Made many personal projects and by using Node.js,<br/>I am familiar with back-end and front-end web development.</li>
-                            </ul>
-                            <li style={{fontWeight:"bold"}}>Python</li>
-                            <ul>
-                                <li>Used for around 2 years. Proficient</li>
-                                <li>Used to make many smaller-scale projects and algorithms.</li>
-                            </ul>
-                            <li style={{fontWeight:"bold"}}>Unity/C#</li>
-                            <ul>
-                                <li>Used for around 1 year. Proficient</li>
-                                <li>Mostly worked to recreate many 2D games with Unity.</li>
-                            </ul>
-                            <li style={{fontWeight:"bold"}}>Java</li>
-                            <ul>
-                                <li>Used for about a year. Relatively Proficient</li>
-                                <li>Can use it, but have not made many personal projects with it.</li>
-                            </ul>
-                        </ul>
-                    </div>
+        <div className='Home' style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px"}}>
+            <div style={{width:props.windowwidth/2}}>
+                <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"40px"}}>About</p>
+                <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
+                    <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"200px"}} variant="middle"></Divider>
                 </div>
-                {/* <div style={{width:"100%"}}>
-                    <SpinningCircles style={{width:"100%",height:"100%"}}/>
-                </div> */}
-                {/* style={{width:"100%"}} */}
-                <div>
-                    <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"40px"}}>Work Experience</p>
-                    <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
-                        <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"300px"}} variant="middle"></Divider>
-                    </div>
-                    <ul style={{color:"#00A8CC",listStylePosition: 'inside',textAlign:"left"}}>
-                        <li style={{fontWeight:"bold"}}>Code Coach at The Coder School SF</li>
-                        <ul>
-                            <li>Been working here for over a year</li>
-                            <li>I work to teach kids from anywhere between 7-14 on <br/> the basics of coding.</li>
-                            <li>Primarily use Scratch and Python to teach coding <br/>concepts such as variables, functions, arrays, classes, and more.</li>
-                            <li>The lessons are usually one hour a week per student, <br/> with myself teaching concepts to the student through projects.</li>
-                        </ul>
-                    </ul>
-                </div>
+                <img style={{width:"200px",height:"200px",border:"3px #00A8CC solid",borderRadius: "50%"}}src={require("./images/picture of myself.png")}/>
+                <p style={{color:"#00A8CC",display:'flex',flexDirection:"column",gap:"10px",fontSize:"18px"}}>
+                    <p style={{fontSize:"22px"}}><strong><i>Hey! I'm Justin. I'm an undergraduate student from San Jose State University, and an asp-</i></strong> <br/>but you get the gist of it, I won't do this again, haha.</p>
+                    <br/>
+                    As an Asian American who intends to go into the Computer Science field, I admit I have a bit of a hard time standing out. 
+                    However, I have more qualities than just that! I love creating projects that others can use and enjoy. 
+                    I am experienced in full-stack web development, by making interactable websites that visually excites 
+                    and provide a purpose to others. Of course, I am still young and like to experiment with other coding languages 
+                    and types of softwares I can make. From game development with Unity, discord bots, and making downloadable applications,
+                    I've experimented with a lot of different technologies! Over the around 5 years I've been coding, I have learned and created a lot, but
+                    I still have much to learn. I will continue to barrel forward into the great and vast space that is coding,
+                    because I have just barely begun to scratch the surface of what I can do. 
+                </p>
             </div>
+            <Contact windowwidth={props.windowwidth} windowheight={100}/>
         </div>
     )
 }

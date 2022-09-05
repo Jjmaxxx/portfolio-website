@@ -17,6 +17,17 @@ const theme = createTheme({
               },
             }
           },
+          MuiButton: {
+            styleOverrides: {
+              root: {
+                color:"#00A8CC",
+                "&:hover": {
+                  color: "#0074e0",
+                  textDecoration:"underline 3px"
+                },
+              }
+            }
+          },
     },
     palette: {
         primary: {
