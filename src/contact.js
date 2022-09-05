@@ -4,7 +4,6 @@ import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-let imageList = ["./images/project5.png","./images/project4.png","./images/project1.png","./images/project2.png","./images/project3.png"];
 // let imageList = ["./images/testimage1.png","./images/testimage2.png","./images/testimage3.png","./images/testimage4.png","./images/testimage5.png"];
 function Contact(props){
     return(

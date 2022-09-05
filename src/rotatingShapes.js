@@ -185,7 +185,7 @@ const Canvas = props => {
         ctx.restore();
       }
     }
-    if(shapes.length < 1){
+    if(shapesPosition.length === 0){
       shapes.push(new Sphere(0)); 
       shapes.push(new Box(1));
       shapes.push(new TriangularPrism(2)); 
@@ -196,6 +196,11 @@ const Canvas = props => {
       shapes.push(new TriangularPrism(7)); 
       shapes.push(new Cylinder(8));
       shapes.push(new Cone(9));
+    }else{
+      for(let i=0;i<shapesPosition.length;i++){
+        shapesPosition[i].x *= transformWidth;
+        shapesPosition[i].y *= transformHeight;
+      }
     }
   },[props.windowwidth,props.windowheight])
   

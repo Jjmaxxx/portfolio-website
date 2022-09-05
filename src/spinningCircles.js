@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 let animationFrame;
 let shapes = [];
+let prevWindowWidth,prevWindowHeight,transformWidth,transformHeight;
 
 const Canvas = props => {
   const canvasRef = useRef(null);
@@ -15,8 +16,12 @@ const Canvas = props => {
   useEffect(()=>{
     let canvas = canvasRef.current;
     let ctx = canvas.getContext('2d');
-    // canvas.width = props.windowwidth;
-    // canvas.height = props.windowheight;
+    canvas.width = props.windowwidth;
+    canvas.height = props.windowheight;
+    transformWidth = canvas.width/prevWindowWidth;
+    transformHeight = canvas.height/prevWindowHeight;
+    prevWindowHeight = props.windowheight;
+    prevWindowWidth = props.windowwidth;
     window.cancelAnimationFrame(animationFrame);
     const render = () =>{
       draw(ctx);
@@ -73,7 +78,7 @@ const Canvas = props => {
         shapes.push(new Sphere2(0.01,2)); 
         shapes.push(new Sphere2(-0.01,2)); 
     }
-  },[])
+  },[props.windowwidth,props.windowheight])
   
   return <canvas ref={canvasRef} {...props}/>
 }

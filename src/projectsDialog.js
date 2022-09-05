@@ -74,7 +74,7 @@ function ProjectDialog(props){
             open={open}
             onClose={handleClose}
         >
-          <DialogTitle style={{fontSize:"25px",textAlign:"center",fontWeight:"bolder",textDecoration: "underline",textDecorationWidth:"3px"}} color="secondary">{projectName}</DialogTitle>
+          <DialogTitle style={{fontSize:"25px",textAlign:"center",textDecoration: "underline",textDecorationWidth:"3px",fontFamily:"Aileron"}} color="secondary">{projectName}</DialogTitle>
           <div style={{display:'flex',overflow:"hidden"}}>
             <div 
               style={{width:"100%",height:"350px", whiteSpace:"nowrap",transform: `translateX(${xMove * -1}px)`,transitionDuration:"1s"}}

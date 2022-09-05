@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import Contact from './contact.js';
 import Divider from '@mui/material/Divider';
-import SpinningCircles from './spinningCircles.js';
 // let imageList = ["./images/testimage1.png","./images/testimage2.png","./images/testimage3.png","./images/testimage4.png","./images/testimage5.png"];
 function Experience(props){
     return(
         <div className='Home' style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px",marginBottom:"30px"}}>
             <div style={{display:"flex",justifyContent:"space-around"}}>
             <div>
-                <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"40px"}}>Languages</p>
+                <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"Aileron",fontSize:"40px"}}>LANGUAGES</p>
                     <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
                         <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"200px"}} variant="middle"></Divider>
                     </div>
@@ -39,7 +37,7 @@ function Experience(props){
                     </div>
                 </div>
                 <div>
-                <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"LeagueSpartan", fontWeight:"600",fontSize:"40px"}}>Work Experience</p>
+                <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"Aileron",fontSize:"40px"}}>WORK EXPERIENCE</p>
                 <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
                     <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"300px"}} variant="middle"></Divider>
                 </div>

@@ -38,9 +38,17 @@
 }
 @font-face {
   font-family: 'LeagueSpartan';
-  src: local('LeagueSpartan'), url(./fonts/LeagueSpartan-Bold.otf) format('otf');
+  src: local('LeagueSpartan'), url(./fonts/LeagueSpartan-Bold.otf) format('opentype');
 }
 @font-face {
-  font-family: 'PlayfairDisplay';
-  src: local('PlayfairDisplay'), url(./fonts/PlayfairDisplay.ttf) format('ttf');
+  font-family: 'Aileron';
+  src: local('Aileron'), url(./fonts/aileron_0102/Aileron-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Futura';
+  src: local('Futura'), url(./fonts/futura/Futura\ Book\ Regular.otf) format('opentype');
+}
+p,li{
+  font-family: Futura;
+  letter-spacing: -0.3px;
 }
