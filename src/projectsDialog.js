@@ -111,10 +111,25 @@ function ProjectDialog(props){
           <div style={{width:"100%",display:"flex",justifyContent:"center",padding:"0",margin:"0"}}>
             <p style={{color:"#00A8CC", width:"75%", whiteSpace: "pre-line",textAlign:"center",padding:"0",margin:"0"}}>{projectText}</p>
           </div>
-          <div style={{display:"flex",justifyContent:"center",margin:"10px"}}>
+          <div style={{display:"flex",justifyContent:"center",margin:"10px",gap:"5px"}}>
             <a href={projectLink}>
               <img src={require("./images/github.png")} alt="" width="50px" height="50px"/>
             </a>
+            {props.num === 0 &&
+              <a href={"https://drive.google.com/file/d/1QT-l_LV20DBBrZ4i5xuKDSUy8a7FfFEz/view"}>
+                <img src={require("./images/googledrive.png")} alt="" width="50px" height="50px"/>
+              </a>
+            }
+            {props.num === 2 &&
+              <a href={"https://multiplayer-paint.herokuapp.com/"}>
+                <img src={require("./images/heroku.svg")} alt="" width="50px" height="50px"/>
+              </a>
+            }
+            {props.num === 3 &&
+              <a href={"https://definitelynotcookieclicker.jjmaxxx.repl.co/"}>
+                <img src={require("./images/replit.png")} alt="" width="50px" height="50px"/>
+              </a>
+            }
           </div>
         </Dialog>
       </div>
