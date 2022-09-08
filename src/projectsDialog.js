@@ -5,7 +5,10 @@ import { Dialog, DialogTitle } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import styles from './utils/styles.js';
+
 function ProjectDialog(props){
+    const style = styles;
     const [open, setOpen] = useState(true);
     const [projectName,setProjectName] = useState("");
     const [projectImages,setProjectImages] = useState([]);
@@ -74,8 +77,8 @@ function ProjectDialog(props){
             open={open}
             onClose={handleClose}
         >
-          <DialogTitle style={{fontSize:"25px",textAlign:"center",textDecoration: "underline",textDecorationWidth:"3px",fontFamily:"Aileron"}} color="secondary">{projectName}</DialogTitle>
-          <div style={{display:'flex',overflow:"hidden"}}>
+          <DialogTitle style={style.dialogTitle} color="secondary">{projectName}</DialogTitle>
+          <div style={style.dialogContent}>
             <div 
               style={{width:"100%",height:"350px", whiteSpace:"nowrap",transform: `translateX(${xMove * -1}px)`,transitionDuration:"1s"}}
             >
@@ -83,14 +86,14 @@ function ProjectDialog(props){
                 return(<img src={require(`${ src}`)} width={"100%"} height={"100%"} key={src} alt={src}></img>) 
               })}
             </div>
-            <div style={{marginLeft:"-100%",top:"219px",display:"flex",justifyContent:"space-between",width:"100%"}}>
+            <div style={style.dialogImageButtons}>
               {index!==0 &&
                 <IconButton disableRipple onClick = {goBack}>
                   <ArrowBackIosIcon color="primary"/>
                 </IconButton>
               }
               {index === 0 ?
-                <div style={{display:"flex",justifyContent:"flex-end",width:"100%"}}>
+                <div style={style.forwardImageButton}>
                   <IconButton disableRipple onClick = {goForward}>
                     <ArrowForwardIosIcon color="primary"/>
                   </IconButton>
@@ -105,13 +108,13 @@ function ProjectDialog(props){
               }
             </div>
           </div>
-          <p style={{color:"#00A8CC",fontStyle:"italic",fontWeight:"bold",marginLeft:"10px"}}>
+          <p style={style.dialogMadeWith}>
             Made With: {madeWithText}
           </p>
-          <div style={{width:"100%",display:"flex",justifyContent:"center",padding:"0",margin:"0"}}>
-            <p style={{color:"#00A8CC", width:"75%", whiteSpace: "pre-line",textAlign:"center",padding:"0",margin:"0"}}>{projectText}</p>
+          <div style={style.dialogTextContainer}>
+            <p style={style.dialogText}>{projectText}</p>
           </div>
-          <div style={{display:"flex",justifyContent:"center",margin:"10px",gap:"5px"}}>
+          <div style={style.dialogIconsContainer}>
             <a href={projectLink}>
               <img src={require("./images/github.png")} alt="" width="50px" height="50px"/>
             </a>

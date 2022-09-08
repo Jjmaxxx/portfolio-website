@@ -6,9 +6,18 @@ let mouseDown = false;
 let interval;
 let mouseX, mouseY;
 let prevWindowWidth,prevWindowHeight,transformWidth,transformHeight;
-window.addEventListener('mousedown', dragging);
-window.addEventListener("mousemove", getMousePos)
-window.addEventListener('mouseup', stopDragging);
+window.addEventListener('scroll',scrolling);
+function scrolling(){
+  if(window.scrollY===0){
+    window.addEventListener('mousedown', dragging);
+    window.addEventListener("mousemove", getMousePos);
+    window.addEventListener('mouseup', stopDragging);
+  }else{
+    window.removeEventListener('mousedown',dragging);
+    window.removeEventListener("mousemove", getMousePos);
+    window.removeEventListener('mouseup', stopDragging);
+  }
+}
 function dragging() {
   let shapeNum = checkIfOverShape();
   if(shapeNum || shapeNum === 0){

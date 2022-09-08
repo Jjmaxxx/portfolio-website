@@ -11,7 +11,10 @@ import RotatingShapes from './rotatingShapes.js';
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { AppBar, Toolbar, Box, Button } from "@mui/material";
+import styles from './utils/styles.js';
+
 function App() {
+  const style = styles;
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
   let homePage = useRef(null);
@@ -45,13 +48,13 @@ function App() {
     }
   }
   return (
-    <div className="App" style={{width:"100%",overflow: "hidden"}}>
+    <div className="App" style={style.App}>
       <CirclesCanvas windowwidth={width} windowheight = {height+100} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <RotatingShapes windowwidth={width} windowheight = {height+100} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <AppBar color="primary">
-          <Toolbar sx={{display:"flex",justifyContent:"flex-end",gap:"50px"}}>
+          <Toolbar sx={style.toolBar}>
             <Box>
               <Button disableRipple onClick={()=>{scroll("home")}}>Home</Button>
             </Box>

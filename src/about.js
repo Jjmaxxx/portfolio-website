@@ -1,19 +1,21 @@
 import React from 'react';
 import './App.css';
+import styles from './utils/styles.js';
 import Contact from './contact.js';
 import Divider from '@mui/material/Divider';
 // let imageList = ["./images/testimage1.png","./images/testimage2.png","./images/testimage3.png","./images/testimage4.png","./images/testimage5.png"];
 function About(props){
+    const style = styles;
     return(
         <div style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px"}}>
             <div style={{width:props.windowwidth/2}}>
-                <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"Aileron",fontSize:"40px"}}>ABOUT</p>
-                <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>
-                    <Divider sx={{borderBottomWidth:"3px",backgroundColor:"#00A8CC",width:"200px"}} variant="middle"></Divider>
+                <p style={style.heading}>ABOUT</p>
+                <div style={style.dividerContainer}>
+                    <Divider sx={style.divider} variant="middle"></Divider>
                 </div>
-                <img style={{width:"200px",height:"200px",border:"3px #00A8CC solid",borderRadius: "50%"}} alt="me" src={require("./images/picture of myself.png")}/>
-                <p style={{color:"#00A8CC",display:'flex',flexDirection:"column",gap:"10px",fontSize:"18px"}}>
-                    <p style={{fontSize:"22px"}}><strong><i>Hey! I'm Justin. I'm an undergraduate student from San Jose State University, and an asp-</i></strong> <br/>but you get the gist of it, I won't do this again, haha.</p>
+                <img style={style.aboutImage} alt="me" src={require("./images/picture of myself.png")}/>
+                <p style={style.aboutTextContainer}>
+                    <p style={style.aboutBigText}><strong><i>Hey! I'm Justin. I'm an undergraduate student from San Jose State University, and an asp-</i></strong> <br/>but you get the gist of it, I won't do this again, haha.</p>
                     <br/>
                     As an Asian American who intends to go into the Computer Science field, I admit I have a bit of a hard time standing out. 
                     However, I have more qualities than just that! I love creating projects that others can use and enjoy. 
