@@ -10,26 +10,38 @@ window.addEventListener('mousedown', dragging);
 window.addEventListener("mousemove", getMousePos)
 window.addEventListener('mouseup', stopDragging);
 function dragging() {
-  // console.log("mouse x: "+ x + " mouse y: " + y);
-  for(let i=0;i<shapesPosition.length;i++){
-    if(mouseX > shapesPosition[i].x-25 && mouseX < shapesPosition[i].x + 25 && mouseY > shapesPosition[i].y-25 && mouseY < shapesPosition[i].y + 25){
-      mouseDown = true;
-      interval = setInterval(()=> {
-        if(mouseDown) {
-          shapesPosition[i].x = mouseX;
-          shapesPosition[i].y = mouseY;
-        }
-      },1)
-    }
+  let shapeNum = checkIfOverShape();
+  if(shapeNum || shapeNum === 0){
+    mouseDown = true;
+     interval = setInterval(function() {
+      if(mouseDown) {
+        shapesPosition[shapeNum].x = mouseX;
+        shapesPosition[shapeNum].y = mouseY;
+      }
+    },1)
   }
 }
 function getMousePos(e){
   mouseX = e.clientX;
   mouseY = e.clientY;
+  let check = checkIfOverShape();
+  if(check || check === 0){
+    document.body.style.cursor = "pointer";
+  }else{
+    document.body.style.cursor = "default";
+  }
 }
 function stopDragging(){
   clearTimeout(interval);
   mouseDown = false;
+}
+function checkIfOverShape(){
+  for(let i=0;i<shapesPosition.length;i++){
+    if(mouseX > shapesPosition[i].x-25 && mouseX < shapesPosition[i].x + 25 && mouseY > shapesPosition[i].y-25 && mouseY < shapesPosition[i].y + 25){
+      return i;
+    }
+  }
+  return false;
 }
 const Canvas = props => {
   const canvasRef = useRef(null);
@@ -75,8 +87,6 @@ const Canvas = props => {
           this.rotationSpeed = Math.random()* (-0.01-(-0.001)) + (-0.001);
         }
         this.id = id;
-        // console.log(this.x);
-        // console.log(this.y)
       }
       update(){
         shapesPosition[this.id].x += this.xVelocity/800;

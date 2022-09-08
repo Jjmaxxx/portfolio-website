@@ -6,7 +6,7 @@ let imageList = ["./images/project5.png","./images/project4.png","./images/proje
 // let imageList = ["./images/testimage1.png","./images/testimage2.png","./images/testimage3.png","./images/testimage4.png","./images/testimage5.png"];
 function Projects(props){
     return(
-        <div className='Home' style={{height:props.windowheight}}>
+        <div style={{height:props.windowheight}}>
             <div style={{height:'100%',display:"flex",flexDirection:"column",justifyContent:"center"}}>
                 <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"Aileron",fontSize:"40px",textAlign:"center"}}>PROJECTS</p>
                 <div style={{marginTop:"15px",marginBottom:"30px",display:"flex",justifyContent:"center",padding:'0'}}>

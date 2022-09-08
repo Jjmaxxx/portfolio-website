@@ -4,7 +4,7 @@ import Divider from '@mui/material/Divider';
 // let imageList = ["./images/testimage1.png","./images/testimage2.png","./images/testimage3.png","./images/testimage4.png","./images/testimage5.png"];
 function Experience(props){
     return(
-        <div className='Home' style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px",marginBottom:"30px"}}>
+        <div style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px",marginBottom:"30px"}}>
             <div style={{display:"flex",justifyContent:"space-around"}}>
             <div>
                 <p style={{marginBottom:"0",color:"#00A8CC",fontFamily:"Aileron",fontSize:"40px"}}>LANGUAGES</p>
