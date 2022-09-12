@@ -5,7 +5,7 @@ import styles from './utils/styles.js';
 function Experience(props){
     const style = styles;
     return(
-        <div style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px",marginBottom:"30px"}}>
+        <div style={{width:props.windowwidth,display:'flex',flexDirection:"column",alignItems:"center",gap:"100px",marginBottom:"30px",justifyContent:"space-around"}}>
             <div style={style.experiencePage}>
             <div>
                 <p style={style.heading}>LANGUAGES</p>
@@ -38,7 +38,7 @@ function Experience(props){
                     </div>
                 </div>
                 <div>
-                <p style={style.heading}>WORK EXPERIENCE</p>
+                <p style={style.heading}>WORK</p>
                 <div style={style.dividerContainer}>
                     <Divider sx={style.divider} variant="middle"></Divider>
                 </div>

@@ -116,7 +116,6 @@ const styles = {
     },
     dialogContent:{
         display:'flex',
-        overflow:"hidden"
     },
     dialogImageButtons:{
         marginLeft:"-100%",

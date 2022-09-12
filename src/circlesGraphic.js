@@ -77,11 +77,11 @@ const Canvas = props => {
         }
       }
     if(circlePositions.length === 0){
-      for(let i=0; i<70;i++){
+      for(let i=0; i<props.numberOfCircles;i++){
         circles.push(new Circle(Math.floor(Math.random() * canvas.width),Math.floor(Math.random() * canvas.height),Math.floor(Math.random()* (100-(-100))) + (-100),Math.floor(Math.random()* (100-(-100))) + (-100),i));
       }
     }else{
-      for(let i=0; i<70;i++){
+      for(let i=0; i<props.numberOfCircles;i++){
         circles.push(new Circle(circlePositions[i].x * transformWidth,circlePositions[i].y * transformHeight,circlePositions[i].vx,circlePositions[i].vy,i));
       }
     }

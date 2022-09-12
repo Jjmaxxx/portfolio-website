@@ -10,9 +10,9 @@ import CirclesCanvas from './circlesGraphic.js';
 import RotatingShapes from './rotatingShapes.js';
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { AppBar, Toolbar, Box, Button } from "@mui/material";
+import { AppBar, Toolbar, Button } from "@mui/material";
 import styles from './utils/styles.js';
-
+let windowArea = window.innerHeight * window.innerWidth;
 function App() {
   const style = styles;
   const [width, setWidth] = useState(window.innerWidth);
@@ -26,8 +26,8 @@ function App() {
     setHeight(window.innerHeight);
   }
   useEffect(() => {
-      window.addEventListener("resize", updateDimensions);
-      return () => window.removeEventListener("resize", updateDimensions);
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
   function scroll(element){
     if(homePage.current && projectsPage.current && experiencePage.current && aboutPage.current){
@@ -49,24 +49,16 @@ function App() {
   }
   return (
     <div className="App" style={style.App}>
-      <CirclesCanvas windowwidth={width} windowheight = {height+100} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
+      <CirclesCanvas numberOfCircles = {Math.round(windowArea/28000)}windowwidth={width} windowheight = {height+100} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <RotatingShapes windowwidth={width} windowheight = {height+100} style={{position:'absolute', right:0, width:{width}, height:{height}}}/>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <AppBar color="primary">
           <Toolbar sx={style.toolBar}>
-            <Box>
               <Button disableRipple onClick={()=>{scroll("home")}}>Home</Button>
-            </Box>
-            <Box>
               <Button disableRipple onClick={()=>{scroll("projects")}}>Projects</Button>
-            </Box>
-            <Box>
               <Button disableRipple onClick={()=>{scroll("experience")}} >Experience</Button>
-            </Box>
-            <Box>
               <Button disableRipple onClick={()=>{scroll("about")}} >About Me</Button>
-            </Box>
           </Toolbar>
         </AppBar>
 

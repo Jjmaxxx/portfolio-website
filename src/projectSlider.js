@@ -80,7 +80,7 @@ function ProjectSlider(props){
                 >
                 {images.map((src,num)=>{
                     if(num===Math.floor(images.length/2)){
-                    return(<img style={style.clickableImage} onClick={()=>{openDialog(num)}} src={require(`${ src}`)} width={"800px"} height={"100%"} alt={src}></img>) 
+                        return(<img style={style.clickableImage} onClick={()=>{openDialog(num)}} src={require(`${ src}`)} width={"800px"} height={"100%"} alt={src}></img>) 
                     }else{
                         return(<img style={style.notFocusedImage} src={require(`${ src}`)} width={"800px"} height={"100%"} alt={src}/>)
                     }
