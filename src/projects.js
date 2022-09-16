@@ -15,6 +15,7 @@ function Projects(props){
                     <Divider sx={style.divider} variant="middle"></Divider>
                 </div>
                 {/* <img src={require("./images/testimage1.png")}/> */}
+                <p style={{color:"#00A8CC",fontSize:"10px",margin:"0"}}>click me ↓</p>
                 <ProjectSlider images={imageList} height={400} width={props.windowwidth}/>
                 <p style={style.centeredText}>I also have many other smaller-scale projects hosted on <a style={style.linkText} href="https://github.com/Jjmaxxx">Github</a> and <a style={style.linkText} href="https://replit.com/@Jjmaxxx">Replit</a>.</p>
             </div>

@@ -22,7 +22,8 @@ const styles = {
     },
     experiencePage:{
         display:"flex",
-        justifyContent:"space-around"
+        justifyContent:"space-around",
+        flexWrap:"wrap"
     },
     heading:{
         marginBottom:"0",
@@ -40,7 +41,7 @@ const styles = {
     divider:{
         borderBottomWidth:"3px",
         backgroundColor:"#00A8CC",
-        width:"200px"
+        width:"150px"
     },
     languagesContainer:{
         marginLeft:"50px",

@@ -8,7 +8,7 @@ function Home(props){
             <div style={style.home}>
                 <div style={{position:"absolute",width:(props.windowwidth/2),height:"200px",minHeight:'250px'}}>
                     <p style={style.homeHeading}>Hey, I'm Justin Lee.</p>
-                    <p style={style.textColor}>I'm an undergraduate student from San Jose State University, and an aspiring Software Engineer.</p>
+                    <p style={style.textColor}>I'm an undergraduate student from San Jose State University, and interested in Website, Software, and Game development.</p>
                 </div>
             </div>
         </div>

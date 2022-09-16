@@ -15,10 +15,9 @@ function About(props){
                 </div>
                 <img style={style.aboutImage} alt="me" src={require("./images/picture of myself.png")}/>
                 <p style={style.aboutTextContainer}>
-                    <p style={style.aboutBigText}><strong><i>Hey! I'm Justin. I'm an undergraduate student from San Jose State University, and an asp-</i></strong> <br/>but you get the gist of it, I won't do this again, haha.</p>
+                    <p style={style.aboutBigText}><strong><i>Hey! I'm Justin Lee. I'm an undergraduate student from San Jose State University, and interes-</i></strong> <br/>but you get the gist of it, I won't do this again, haha.</p>
                     <br/>
-                    As an Asian American who intends to go into the Computer Science field, I admit I have a bit of a hard time standing out. 
-                    However, I have more qualities than just that! I love creating projects that others can use and enjoy. 
+                    I love creating projects that others can use and enjoy. 
                     I am experienced in full-stack web development, by making interactable websites that visually excites 
                     and provide a purpose to others. Of course, I am still young and like to experiment with other coding languages 
                     and types of softwares I can make. From game development with Unity, discord bots, and making downloadable applications,

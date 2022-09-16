@@ -65,7 +65,7 @@ function App() {
         <div ref={homePage}>
           <Home windowwidth={width} windowheight={height} />
         </div>
-        <div ref={projectsPage}>
+        <div ref={projectsPage} style={{marginTop:"50px"}}>
           <Projects windowwidth={width} windowheight={800}/>
         </div>
         <div ref={experiencePage}>

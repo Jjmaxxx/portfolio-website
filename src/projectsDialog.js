@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import styles from './utils/styles.js';
-
+let initalWidth;
 function ProjectDialog(props){
     const style = styles;
     const [open, setOpen] = useState(true);
@@ -16,17 +16,19 @@ function ProjectDialog(props){
     const [madeWithText, setMadeWithText] = useState("");
     const [projectText, setProjectText] = useState("");
     const [projectLink, setProjectLink] = useState("");
-    // const [imgWidth,setImgWidth] = useState(0);
+    const [imgWidth,setImgWidth] = useState(0);
     const [index,setIndex] = useState(0);
     const [xMove, setXMove] = useState(0);
-    // function setWidth(){
-    //   if(imageWidth.current != null){
-    //     setImgWidth(imageWidth.current.clientWidth)
-    //   }
-    // }
+    function setWidth(){
+      if(imageWidth.current != null){
+        setImgWidth(imageWidth.current.clientWidth);
+        setXMove(imageWidth.current.clientWidth*index); 
+        setIndex(0);
+      }
+    }
     useEffect(() => {
-      // window.removeEventListener("resize", setWidth)
-      // window.addEventListener("resize", setWidth);
+      window.removeEventListener("resize", setWidth)
+      window.addEventListener("resize", setWidth);
       switch(props.num){
         case 0:
           setProjectImages(["./images/project1.png","./images/project1 2.png","./images/project1 3.png","./images/project1 4.png","./images/project1 5.png"]);  
@@ -69,11 +71,17 @@ function ProjectDialog(props){
       }
     }, [open]);
     function goBack(){
-      setXMove(xMove-590);
+      setXMove(xMove-imgWidth);
       setIndex(index-1);
     }
     function goForward(){
-      setXMove(xMove+590);
+      if(imgWidth === 0){
+        setWidth();
+        initalWidth = imageWidth.current.clientWidth;
+        setXMove(xMove+initalWidth);
+      }else{
+        setXMove(xMove+imgWidth);
+      }
       setIndex(index+1);
       // setImgWidth(imageWidth.current.clientWidth);
       // console.log(imgWidth);
@@ -90,7 +98,7 @@ function ProjectDialog(props){
         >
           <DialogTitle style={style.dialogTitle} color="secondary">{projectName}</DialogTitle>
           <div style={style.dialogContent} >
-            <div style={{overflowX:"hidden",display:"flex"}}>
+            <div style={{overflow:"hidden",display:"flex"}}>
             <div 
               style={{width:"100%",height:"350px", whiteSpace:"nowrap",transform: `translateX(${xMove * -1}px)`,transitionDuration:"1s"}}
               ref={imageWidth}
