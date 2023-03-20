@@ -143,7 +143,7 @@ function ProjectDialog(props){
               <img src={require("./images/github.png")} alt="" width="50px" height="50px"/>
             </a>
             {props.num === 0 &&
-              <a href={"https://drive.google.com/file/d/1QT-l_LV20DBBrZ4i5xuKDSUy8a7FfFEz/view"}>
+              <a href={"https://drive.google.com/file/d/1KwHn-pv-S2Z5KEbD5CQBSQz3VlufZiKF/view?usp=sharing"}>
                 <img src={require("./images/googledrive.png")} alt="" width="50px" height="50px"/>
               </a>
             }
